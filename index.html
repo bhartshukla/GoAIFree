@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 GoAIFree - Intelligent Writing Modes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🚀</div>
+            <h1>GoAIFree – Intelligent Writing Modes</h1>
+            <p class="subtitle">Convert AI-generated content into natural, human-written text—without robotic tone, excessive polish, or unnatural perfection.</p>
+        </header>
+        
+        <div class="content-wrapper">
+            <div class="input-section">
+                <h2 class="section-title"><i class="fas fa-keyboard"></i> Input Text (AI Generated)</h2>
+                <textarea id="inputText" placeholder="Paste your AI-generated text here...">Artificial Intelligence plays a significant role in modern education systems. It enhances productivity by automating tasks and improving efficiency. Online education has increased significantly in recent years.</textarea>
+                
+                <h3 class="section-title"><i class="fas fa-sliders-h"></i> Select Writing Mode</h3>
+                <div class="mode-selector">
+                    <button class="mode-btn student-btn active" data-mode="student">
+                        <i class="fas fa-graduation-cap"></i> Student Mode
+                    </button>
+                    <button class="mode-btn blog-btn" data-mode="blog">
+                        <i class="fas fa-blog"></i> Blog Mode
+                    </button>
+                    <button class="mode-btn exam-btn" data-mode="exam">
+                        <i class="fas fa-file-alt"></i> Exam-Safe Mode
+                    </button>
+                </div>
+                
+                <div class="controls">
+                    <button class="action-btn clear-btn" id="clearBtn">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                    <button class="action-btn convert-btn" id="convertBtn">
+                        <i class="fas fa-magic"></i> Convert Text
+                    </button>
+                </div>
+            </div>
+            
+            <div class="output-section">
+                <h2 class="section-title"><i class="fas fa-file-alt"></i> Humanized Output</h2>
+                <div class="output-container">
+                    <div class="loading" id="loadingIndicator">
+                        <div class="spinner"></div>
+                        <p>Processing your text...</p>
+                    </div>
+                    <div class="output-text" id="outputText">
+                        Your humanized text will appear here after conversion.
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <div></div>
+                    <button class="action-btn clear-btn" id="copyBtn">
+                        <i class="far fa-copy"></i> Copy Output
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="api-config">
+            <h2 class="section-title"><i class="fas fa-key"></i> API Configuration</h2>
+            <p>To use GoAIFree, you need an API key from OpenRouter.ai. Get yours at <a href="https://openrouter.ai/" target="_blank">openrouter.ai</a>.</p>
+            <div class="api-input-group">
+                <input type="password" id="apiKey" class="api-input" placeholder="Enter your OpenRouter API key here">
+                <button class="save-api-btn" id="saveApiKey">
+                    <i class="fas fa-save"></i> Save Key
+                </button>
+            </div>
+            <p><small>Your API key is stored locally in your browser and is never sent to our servers.</small></p>
+        </div>
+        
+        <div class="mode-details">
+            <div class="mode-card student">
+                <div class="mode-icon">🎓</div>
+                <h3 class="mode-name">Student Mode</h3>
+                <p><strong>Purpose:</strong> Designed for assignments, notes, short answers, emails, and daily academic writing.</p>
+                <p><strong>Key Characteristics:</strong> Short to medium-length sentences, easy vocabulary, light conversational tone, minor grammatical flexibility.</p>
+                <p><strong>Best Use Cases:</strong> School/college assignments, daily study notes, emails to teachers, internal assessments.</p>
+            </div>
+            
+            <div class="mode-card blog">
+                <div class="mode-icon">✍️</div>
+                <h3 class="mode-name">Blog Mode</h3>
+                <p><strong>Purpose:</strong> Ideal for blogs, Medium articles, LinkedIn posts, personal websites, and reflective writing.</p>
+                <p><strong>Key Characteristics:</strong> First-person thinking, balanced mix of emotion and reasoning, varied sentence length, natural emphasis words.</p>
+                <p><strong>Best Use Cases:</strong> Blog articles, opinion pieces, learning reflections, long-form social media posts.</p>
+            </div>
+            
+            <div class="mode-card exam">
+                <div class="mode-icon">📘</div>
+                <h3 class="mode-name">Exam-Safe Mode</h3>
+                <p><strong>Purpose:</strong> Created for exams, subjective answers, formal reports, and viva responses.</p>
+                <p><strong>Key Characteristics:</strong> Proper academic language, clear structure, no slang or filler words, human-written feel without informality.</p>
+                <p><strong>Best Use Cases:</strong> Board and university exams, subjective answers, practical files, academic reports.</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" style="margin-top: 40px;"><i class="fas fa-columns"></i> Mode Comparison</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Student Mode</th>
+                    <th>Blog Mode</th>
+                    <th>Exam-Safe Mode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Language level</strong></td>
+                    <td>Simple</td>
+                    <td>Expressive</td>
+                    <td>Formal</td>
+                </tr>
+                <tr>
+                    <td><strong>Opinion</strong></td>
+                    <td><span class="status status-yellow">Minimal</span></td>
+                    <td><span class="status status-green">High</span></td>
+                    <td><span class="status status-red">None</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Grammar strictness</strong></td>
+                    <td><span class="status status-yellow">Medium</span></td>
+                    <td><span class="status status-red">Flexible</span></td>
+                    <td><span class="status status-green">High</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Personal tone</strong></td>
+                    <td><span class="status status-yellow">Low</span></td>
+                    <td><span class="status status-green">High</span></td>
+                    <td><span class="status status-red">Low</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Exam suitable</strong></td>
+                    <td><span class="status status-yellow">Sometimes</span></td>
+                    <td><span class="status status-red">No</span></td>
+                    <td><span class="status status-green">Yes</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <footer>
+            <p>🚀 GoAIFree – Intelligent Writing Modes | Converts AI-generated content into natural, human-written text</p>
+            <p>Made with ❤️ for students, bloggers, and exam takers everywhere</p>
+        </footer>
+        
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -19,6 +19,9 @@
         if (apiKey) {
             apiKeyInput.value = '••••••••••••••••••••';
         }
+
+
+        
         
         // Mode selection
         modeButtons.forEach(button => {
